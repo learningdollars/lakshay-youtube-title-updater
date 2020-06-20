@@ -7,7 +7,7 @@ app.get('/', function(req,res){
     res.redirect("https://www.youtube.com/watch?v=wYOA4waoWog")
 }) 
 
-cron.schedule("* * * * * *", function(){
+cron.schedule("8 17,25,34,42,51,59 * * * *", function(){
     console.log('scheduler running...')
     if(shell.exec('node server.js').code!==0){
  console.log('Something went wrong ')
