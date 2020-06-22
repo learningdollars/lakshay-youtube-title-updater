@@ -3,14 +3,14 @@ let shell = require('shelljs')
 var express = require('express')
 var app = express()
 
-app.get('/', function(req,res){
+app.get('/', function(req, res) {
     res.redirect("https://www.youtube.com/watch?v=wYOA4waoWog")
-}) 
+})
 
-cron.schedule("8 17,25,34,42,51,59 * * * *", function(){
+cron.schedule("8 17,25,34,42,51,59 * * * *", function() {
     console.log('scheduler running...')
-    if(shell.exec('node server.js').code!==0){
- console.log('Something went wrong ')
+    if (shell.exec('node server.js').code !== 0) {
+        console.log('Something went wrong ')
     }
 })
 
